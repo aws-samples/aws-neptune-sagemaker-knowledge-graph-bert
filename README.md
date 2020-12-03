@@ -36,7 +36,7 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 This library is licensed under the MIT-0 License. See the LICENSE file.
 
 ## Authors
-Viktor Malesevic (https://github.com/ViktorMalesevic)
-Fatema Alkhanaizi (https://github.com/Fatema)
-Othmane Hamzaoui (https://github.com/Othmane796)
+- Viktor Malesevic (https://github.com/ViktorMalesevic)
+- Fatema Alkhanaizi (https://github.com/Fatema)
+- Othmane Hamzaoui (https://github.com/Othmane796)
 
