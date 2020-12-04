@@ -1,4 +1,4 @@
-# Fine tune a Tensorflow 2 BERT model for named entity recognition and build a knowledge graph of extracted entities
+# Fine-tune a Tensorflow 2 BERT model for a custom named entity recognition and build a knowledge graph of extracted entities
 
 ## Background and motivation
 
@@ -16,16 +16,29 @@ Amazon Neptune is a fast, reliable, fully managed graph database service that ma
 
 ### Named Entity Recognition with Tensorflow 2 Bert on SageMaker 
 
-To train and deploy the custom named entity recognition on sagemaker follow the in notebooks/ner-bert-keras-sagemaker.ipynb
+You can train and deploy the custom named entity recognition by following [this](notebooks/ner-bert-keras-sagemaker.ipynb) notebook on [Amazon SageMaker](https://aws.amazon.com/sagemaker/).
 
 ### Neptune cluster
 
-Follow the steps and cloudformation steps avaialbe in Amazon Neptune documentation to start up cluster or use one of the following link to get the cfn stack:
+You can either create a Neptune cluster by following [Amazon Neptune documentation](https://docs.aws.amazon.com/neptune/latest/userguide/get-started-create-cluster.html) or use **Launch Stack** below to launch a cloudformation stack in a region of your choice. 
 
-- For Neptune Cluster: https://s3.amazonaws.com/aws-neptune-customer-samples/v2/cloudformation-templates/neptune-base-stack.json. This will also create a VPC in you account that Neptune Cluster will be running in, if you want to use your own VPC setup you will need to edit the CFN accordingly. 
-- For Neptune workbench/Notebook: https://s3.amazonaws.com/aws-neptune-customer-samples/v2/cloudformation-templates/neptune-sagemaker-notebook-stack.json.
+* Create a Neptune cluster with a stack:
 
-Once these steps are over, follow the instructions in notebooks/knowledge-graph-neptune.ipynb
+Region name	| Region code	| Launch 
+--- | --- | --- 
+US East (N. Virginia)	| us-east-1	| Launch Stack (Replace Launch stack with steps in this [blogpost](https://aws.amazon.com/blogs/devops/construct-your-own-launch-stack-url/) 
+US West (Oregon)	| us-west-2	| Launch Stack
+Europe (Ireland)	| eu-west-1	| Launch Stack
+
+* Launch Neptune workbench/Notebook, launch a stack
+
+Region name	| Region code	| Launch 
+--- | --- | --- 
+US East (N. Virginia)	| us-east-1	| Launch Stack (Replace Launch stack with steps in this [blogpost](https://aws.amazon.com/blogs/devops/construct-your-own-launch-stack-url/) 
+US West (Oregon)	| us-west-2	| Launch Stack
+Europe (Ireland)	| eu-west-1	| Launch Stack
+
+Once, you have created your Neptune cluster and workbench/notebook, you can follow the instructions in [this](notebooks/knowledge-graph-neptune.ipynb) notebook.
 
 ## Security
 
