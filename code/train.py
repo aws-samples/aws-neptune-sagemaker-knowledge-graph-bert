@@ -21,10 +21,9 @@ import source.sentence_preprocessing as senpre
 def main(args):
     #To-do: 
     #-Fix loggin bug and switch all prints to loggers
-    #-Fix model_dir issue with SageMaker 2.16, setting to default (/opt/ml/model) for now 
     
     print("Container structure:")
-    model_dir = '/opt/ml/model'
+    model_dir = args.container_model_dir
     print("internal docker model_dir:", model_dir)
     
     print("epochs: ", args.epochs)
@@ -191,7 +190,7 @@ if __name__ == '__main__':
     parser.add_argument('--train',type=str,required=False,default=os.environ.get('SM_CHANNEL_TRAIN'))
     parser.add_argument('--validation',type=str,required=False,default=os.environ.get('SM_CHANNEL_VALIDATION'))
     parser.add_argument('--eval',type=str,required=False,default=os.environ.get('SM_CHANNEL_EVAL'))
-    parser.add_argument('--model_dir',type=str,default=os.environ.get('SM_MODEL_DIR'), help='The directory where the model will be stored.')
+    parser.add_argument('--container_model_dir',type=str,default=os.environ.get('SM_MODEL_DIR'), help='The directory where the model will be stored inside the docker. This folder is then compressed into a model.tar.gz sent to the s3 location associated with the training job')
     parser.add_argument('--max_sequence_length',type=int, default=70)
     parser.add_argument('--learning_rate',type=float,default=0.00004, help='Initial learning rate.')
     parser.add_argument('--epochs',type=int, default=50)
@@ -199,6 +198,6 @@ if __name__ == '__main__':
     parser.add_argument('--drop_out',type=float, default=0.0)
     parser.add_argument('--bert_path',type=str, default='https://tfhub.dev/tensorflow/bert_en_uncased_L-12_H-768_A-12/3')
     
-    args = parser.parse_args()
+    args, _ = parser.parse_known_args()
 
     main(args)
