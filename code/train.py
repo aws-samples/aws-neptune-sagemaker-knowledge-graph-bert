@@ -1,7 +1,6 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 import os
-os.environ["CUDA_VISIBLE_DEVICES"]="0"
 import argparse
 import json
 
@@ -159,9 +158,6 @@ def main(args):
     # Note: This directory structure will need to be followed - see notes for the next section
     model_version = '1'
     export_dir = os.path.join(model_dir, 'model/', model_version)
-    #tf.saved_model.save(obj=model,
-    #                    export_dir=export_dir)
-    #
     model.save(export_dir)
     print("saving done")
     
