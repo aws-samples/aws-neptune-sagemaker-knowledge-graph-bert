@@ -1,1 +1,4 @@
 .vscode
+.ipynb_checkpoints/
+notebooks/ner_dataset.csv
+notebooks/ner-bert-keras-sagemaker-run.ipynb
