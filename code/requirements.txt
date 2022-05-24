@@ -1,4 +1,4 @@
-tensorflow-gpu==2.5.3
+tensorflow-gpu==2.6.4
 tensorflow-hub==0.10.0
 bert-for-tf2==0.14.7
 bert-tensorflow==1.0.4
